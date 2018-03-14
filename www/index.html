@@ -22,9 +22,11 @@
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -34,11 +36,16 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="mainCtrl as ctrl">
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">{{ 'FRONTPAGE_STATUSBAR' | translate }}</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content class="padding">
+        <h1>{{ 'FRONTPAGE_HEADLINE' | translate }}</h1>
+        <button class="button button-royal" ng-click="ctrl.takePicture()">
+          {{ 'FRONTPAGE_TAKE_PICTURE' | translate }}
+        </button>
+        <img id="picture" ng-src="{{ctrl.image}}" class="responsive-image">
       </ion-content>
     </ion-pane>
   </body>

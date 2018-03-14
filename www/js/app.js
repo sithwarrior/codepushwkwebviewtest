@@ -3,7 +3,20 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'pascalprecht.translate'])
+
+.config(function($translateProvider){
+
+  $translateProvider.useStaticFilesLoader({
+      prefix: "translations/",
+      suffix: ".json"
+  });
+
+  $translateProvider.use('en');
+  $translateProvider.fallbackLanguage('en');
+  $translateProvider.preferredLanguage('en');
+
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -21,4 +34,30 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+
+.controller('mainCtrl', function(){
+  var ctrl = this;
+
+  ctrl.takePicture = function() {
+
+    let cameraOptions = {
+      destinationType	: 1,
+      sourceType : 0,
+      allowEdit : false,
+      encodingType : 0,
+      mediaType : 0,
+      correctOrientation : true
+    }
+
+    navigator.camera.getPicture(function(imageURI) {
+      var image = document.getElementById('picture');
+      image.src = imageURI.substring(7);
+
+    
+    }, function(error) {
+      console.log('error!!')
+    }, cameraOptions);
+  }
+
 })
