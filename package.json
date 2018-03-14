@@ -10,9 +10,15 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
+    "code-push": "^2.0.4",
     "cordova-ios": "~4.5.4",
     "cordova-plugin-camera": "^4.0.2",
+    "cordova-plugin-code-push": "^1.11.7",
+    "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-file": "git+https://github.com/apache/cordova-plugin-file.git#4.3.3",
+    "cordova-plugin-file-transfer": "git+https://github.com/apache/cordova-plugin-file-transfer.git#1.6.3",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -26,7 +32,8 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-camera": {}
+      "cordova-plugin-camera": {},
+      "cordova-plugin-code-push": {}
     },
     "platforms": [
       "ios"

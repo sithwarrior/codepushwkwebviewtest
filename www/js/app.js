@@ -25,6 +25,8 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
       // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 
+      codePush.sync();
+
       // Don't remove this line unless you know what you are doing. It stops the viewport
       // from snapping when text inputs are focused. Ionic handles this internally for
       // a much nicer keyboard experience.
